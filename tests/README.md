@@ -1,12 +1,15 @@
 # 回环测试
 
-用本机已安装的 Edge / Chrome 跑端到端断言，不需要下载浏览器。
+用本机已安装的 Edge / Chrome 跑端到端断言，不需要下载浏览器。对应 SwarmSite 2.3.0，七套共 **263 项**（67 + 10 + 28 + 29 + 45 + 33 + 51），约 7 分钟。
 
 ```bash
 cd tests
 npm install          # 只装 puppeteer-core
-npm test             # 七套一起跑：67 + 10 + 28 + 29 + 45 + 33 + 51 项断言，约 7 分钟
+npm test             # 七套全跑
+# 或在项目根目录：npm test（同一条命令）
 ```
+
+测试分三层：`test.js` / `test-compiler.js` / `test-editor.js` 只开浏览器验证应用本身；`test-llm.js` 额外起一个假的 OpenAI 兼容上游；`test-gateway.js` / `test-files.js` / `test-images.js` 会真起 `server.js`，分别配假 LLM、真上传文档、假图库上游。所有临时配置与产物都在结束时清理，不会碰项目里真正的 `.llm.json`。
 
 - `test.js` — 主流程：离线生成 → 施工 → 边建边点 → 进入网站交互 → CTA → 主题 → LLM 容错 → 导出单文件（含禁用 JS / `?nointro`）→ 减少动态效果 → 控制台零运行时错误
 - `test-llm.js` — 在本地起一个假的 OpenAI 兼容服务，验证四种接入模式、测试连接、围栏+前言解析、HTTP 500 提示（file:// 直连路径）
@@ -47,3 +50,10 @@ EDGE_PATH="C:/Program Files/Google/Chrome/Application/chrome.exe" npm test
 ## 关于「零控制台错误」
 
 只统计**脚本运行时错误**（`pageerror` 与非网络类 `console.error`）。外链图片加载失败（`net::ERR_*`）属于网络环境问题，不计入——图片层本身有渐变兜底，稳定性由 `test-images.js` 单独覆盖。
+
+## 新增测试时
+
+- 在主流程里加断言用 `test.js`；涉及 LLM 输出契约放 `test-llm.js`；涉及 `server.js` 的路由放 `test-gateway.js` / `test-files.js` / `test-images.js`；编辑器交互放 `test-editor.js`。
+- 起服务用随机端口，配置写 `tests/.llm-test.json` 一类的专用文件，**不要复用真实 `.llm.json`**。
+- 所有下载落 `tests/dl/`、临时缓存落 `tests/.img-cache-test/`，并在用例结束时清理；这些路径都已在 `.gitignore` 中。
+- 新增一套后，记得同时更新根目录 `package.json` 的 `test` 脚本和本文件的断言计数。

@@ -2,7 +2,23 @@
   "name": "swarmsite",
   "version": "2.3.0",
   "private": true,
-  "description": "SwarmSite — 一句话，让一群光标把网站建出来；本机接口带 LLM / 图片缓存，成品页可点选编辑",
+  "description": "把 AI 生成网页的过程做成一场多光标施工表演，并导出按钮可用、离线可打开的单文件网页",
+  "keywords": [
+    "swarm-cursors",
+    "ai-website-builder",
+    "blueprint",
+    "llm",
+    "single-file-export"
+  ],
+  "homepage": "https://github.com/QWER1234-Star/swarm-cursor-studio#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QWER1234-Star/swarm-cursor-studio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/QWER1234-Star/swarm-cursor-studio/issues"
+  },
+  "license": "UNLICENSED",
   "scripts": {
     "start": "node server.js",
     "test": "node tests/test.js && node tests/test-llm.js && node tests/test-gateway.js && node tests/test-files.js && node tests/test-compiler.js && node tests/test-images.js && node tests/test-editor.js",
