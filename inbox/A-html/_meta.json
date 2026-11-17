@@ -1,0 +1,69 @@
+[
+ {
+  "tag": "01-美甲",
+  "prompt": "做一个高端美甲店的预约页",
+  "model": "deepseek-chat",
+  "secs": "8.7",
+  "chars": 4021,
+  "isHtml": true,
+  "tokens": 2343
+ },
+ {
+  "tag": "02-AI写作",
+  "prompt": "做一个 AI 写作工具的落地页",
+  "model": "deepseek-chat",
+  "secs": "6.9",
+  "chars": 3459,
+  "isHtml": true,
+  "tokens": 2061
+ },
+ {
+  "tag": "03-瑜伽",
+  "prompt": "做一个社区瑜伽课的招生页",
+  "model": "deepseek-chat",
+  "secs": "6.8",
+  "chars": 3064,
+  "isHtml": true,
+  "tokens": 1942
+ },
+ {
+  "tag": "04-摄影",
+  "prompt": "做一个独立摄影师的个人主页",
+  "model": "deepseek-chat",
+  "secs": "7.2",
+  "chars": 3780,
+  "isHtml": true,
+  "tokens": 2156
+ },
+ {
+  "tag": "05-咖啡",
+  "prompt": "做一个精品咖啡店的官网",
+  "model": "deepseek-chat",
+  "secs": "6.8",
+  "chars": 3163,
+  "isHtml": true,
+  "tokens": 1956
+ },
+ {
+  "tag": "06-宠物殡葬",
+  "prompt": "做一个宠物殡葬服务的介绍页",
+  "model": "deepseek-chat",
+  "secs": "9.0",
+  "chars": 4348,
+  "isHtml": true,
+  "tokens": 2433
+ },
+ {
+  "tag": "07-设备租赁",
+  "error": "terminated"
+ },
+ {
+  "tag": "08-美甲再跑",
+  "prompt": "做一个高端美甲店的预约页",
+  "model": "deepseek-chat",
+  "secs": "8.7",
+  "chars": 3591,
+  "isHtml": true,
+  "tokens": 2186
+ }
+]

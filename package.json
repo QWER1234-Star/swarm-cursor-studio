@@ -1,0 +1,25 @@
+{
+  "name": "swarmsite",
+  "version": "2.3.0",
+  "private": true,
+  "description": "SwarmSite — 一句话，让一群光标把网站建出来；本机接口带 LLM / 图片缓存，成品页可点选编辑",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/test.js && node tests/test-llm.js && node tests/test-gateway.js && node tests/test-files.js && node tests/test-compiler.js && node tests/test-images.js && node tests/test-editor.js",
+    "test:main": "node tests/test.js",
+    "test:llm": "node tests/test-llm.js",
+    "test:gateway": "node tests/test-gateway.js",
+    "test:files": "node tests/test-files.js",
+    "test:compiler": "node tests/test-compiler.js",
+    "test:images": "node tests/test-images.js",
+    "gen": "node tests/gen.js",
+    "batch": "node tests/batch.js",
+    "test:editor": "node tests/test-editor.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "pdf-parse": "^2.4.5"
+  }
+}

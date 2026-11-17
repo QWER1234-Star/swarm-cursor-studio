@@ -1,0 +1,14 @@
+{
+  "name": "swarmsite-tests",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SwarmSite 回环测试：端到端验证生成、施工、交互、LLM 容错与导出降级",
+  "scripts": {
+    "test": "node test.js && node test-llm.js",
+    "test:main": "node test.js",
+    "test:llm": "node test-llm.js"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.17.0"
+  }
+}

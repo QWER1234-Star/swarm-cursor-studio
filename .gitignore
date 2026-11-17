@@ -1,0 +1,16 @@
+.llm.json
+tests/node_modules/
+tests/dl/
+*.log
+.DS_Store
+tests/.llm-test.json
+tests/.tmp-shot.json
+tests/shot-*.png
+tests/_shot*.js
+node_modules/
+tests/.files-test.json
+tests/.tmp-files/
+tests/_dbg*.js
+tests/_crop*.js
+.imgcache/
+tests/.img-cache-test/
