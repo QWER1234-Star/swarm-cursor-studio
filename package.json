@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/QWER1234-Star/swarm-cursor-studio/issues"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "start": "node server.js",
     "test": "node tests/test.js && node tests/test-llm.js && node tests/test-gateway.js && node tests/test-files.js && node tests/test-compiler.js && node tests/test-images.js && node tests/test-editor.js",
